@@ -314,7 +314,6 @@ const EVENTS: IEvent[] = [
   }
 ];
 
-
 @Injectable()
 export class EventService {
   getEvents(): Observable<IEvent[]> {
@@ -328,5 +327,11 @@ export class EventService {
 
   getEvent(id: number): IEvent {
     return EVENTS.find(el => el.id === id);
+  }
+
+  saveEvent(event) {
+    event.id = 999;
+    event.session = [];
+    EVENTS.push(event);
   }
 }
