@@ -10,6 +10,7 @@ import { EventThumbnailComponent } from './event-list/event-thumbnail.component'
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { Error404Component } from './errors/404.component';
+import { CreateSessionComponent } from './create-session/create-session.component';
 
 import { EventService } from './shared/event.service';
 import { ToastrService } from './shared/toastr.service';
@@ -29,6 +30,7 @@ import { EventListResolver } from './shared/event-list-resolver.service';
     NavBarComponent,
     CreateEventComponent,
     Error404Component,
+    CreateSessionComponent,
   ],
   imports: [
     BrowserModule,
