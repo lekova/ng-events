@@ -20,6 +20,7 @@ import { appRoutes } from './app.routes';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { EventRouteActivator } from './shared/event-route-activator.service';
 import { EventListResolver } from './shared/event-list-resolver.service';
+import { SessionListComponent } from './session-list/session-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EventListResolver } from './shared/event-list-resolver.service';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
+    SessionListComponent,
   ],
   imports: [
     BrowserModule,
