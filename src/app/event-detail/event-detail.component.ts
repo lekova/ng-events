@@ -10,7 +10,9 @@ import { IEvent, ISession } from '../shared/event.model';
 })
 export class EventDetailComponent implements OnInit{
   event: IEvent;
-  addMode: boolean;
+  addMode: boolean; 
+  filterBy: string = 'all';
+
   constructor(private eventService: EventService, private route: ActivatedRoute) { }
 
   ngOnInit() {
