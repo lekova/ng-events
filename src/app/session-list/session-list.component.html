@@ -8,7 +8,8 @@
       <div well-body>
         <h6>{{session.presenter}}</h6>
         <span>Duration: {{session.duration | duration}}</span><br />
-        <span>Level: {{session.level}}</span>
+        <span>Level: {{session.level}}</span><br />
+        <span>Voters: {{session.voters.length}}</span>
         <p>{{session.abstract}}</p>
       </div>
     </collapsable-well>

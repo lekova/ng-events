@@ -9,11 +9,17 @@ import { ISession} from '../shared/event.model';
 export class SessionListComponent {
   @Input() sessions: ISession[];
   @Input() filterBy: string;
+  @Input() sortBy: string;
+
   visibleSessions: ISession[] = [];
 
   ngOnChanges() {
     if(this.sessions) {
       this.filterSessions(this.filterBy);
+      console.log('this.sortBy =', this.sortBy);
+      this.sortBy === 'name' ?
+        this.visibleSessions.sort(sortByNameAsc) :
+        this.visibleSessions.sort(sortByVotersDesc);
     }
   }
 
@@ -27,3 +33,14 @@ export class SessionListComponent {
     }
   }
 }
+
+function sortByNameAsc(s1: ISession, s2: ISession) {
+  if(s1.name > s2.name) return 1;
+  if(s1.name < s2.name) return -1;
+  return 0;
+};
+
+
+function sortByVotersDesc(s1: ISession, s2: ISession) {
+  return s2.voters.length - s1.voters.length;
+};
