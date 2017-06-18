@@ -1,4 +1,4 @@
-import {FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 export function restrictedWords(words) {
   return (control: FormControl): {[key: string]: any} => {
