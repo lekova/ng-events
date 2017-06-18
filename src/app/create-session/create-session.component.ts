@@ -38,7 +38,6 @@ export class CreateSessionComponent implements OnInit {
   }
 
   saveSession(formValues) {
-    console.log(formValues);
     const session: ISession = {
       id: undefined,
       name: formValues.name,
@@ -48,7 +47,6 @@ export class CreateSessionComponent implements OnInit {
       abstract: formValues.abstract,
       voters: []
     };
-    console.log(session);
     this.saveNewSession.emit(session); 
   }
 
