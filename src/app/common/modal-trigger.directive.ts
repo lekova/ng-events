@@ -6,7 +6,7 @@ import { JQ_TOKEN } from './jQuery.service';
 })
 export class ModalTriggerDirective implements OnInit {
   private el: HTMLElement;
-  @Input('modal-trigger') modalId: string; 
+  // @Input('modal-trigger') modalId: string;
 
   constructor(ref: ElementRef, @Inject(JQ_TOKEN) private $: any) {
     this.el = ref.nativeElement;
