@@ -27,13 +27,13 @@
             <a *ngIf="!authService.isAuthenticated()" [routerLink]="['user/login']"> Login</a>
             <a *ngIf="authService.isAuthenticated()" [routerLink]="['user/profile']">Welcome {{authService.currentUser.firstName}}</a>
           </li>
-        </ul> 
+        </ul>
       </div>
       <form id="searchForm" (ngSubmit)="searchSessions(searchTerm)" class="navbar-form navbar-right">
         <div class="form-group">
           <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Sessions">
         </div>
-        <button class="btn btn-default" modal-trigger>
+        <button class="btn btn-default" (click)="childModal.show()">
           Search
         </button>
       </form>
@@ -41,13 +41,7 @@
   </div>
 </div>
 
-<!--<simple-modal title="matchingSessions">
-  <div class= "list-group">
-    <a class="list-group-item" *ngFor="let session of foundSessions" [routerLink]="['/events', session.eventId]">{{session.name}}</a>
-  </div>
-</simple-modal>-->
-
-<simple-modal closeOnBodyClick="true" elementId="searchResults" title="Matching Sessions">
+<simple-modal #childModal elementId="searchResults" title="Matching Sessions">
   <div class="list-group">
     <a class="list-group-item" *ngFor="let session of foundSessions" [routerLink]="['/events', session.eventId]">{{session.name}}</a>
   </div>
