@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "ng2-bootstrap": "^1.6.3",
     "ng2f-bootstrap": "0.0.4",
     "ng2f-server": "^0.2.4",
     "rxjs": "^5.1.0",
