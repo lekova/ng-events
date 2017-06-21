@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { EventListComponent } from './event-list/event-list.component';
@@ -51,6 +52,7 @@ declare const jQuery: Object;
   ],
   imports: [
     BrowserModule,
+    ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
