@@ -5,17 +5,17 @@ import { ModalModule, ModalDirective } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'simple-modal',
   template: `
-  <div id="{{elementId}}" bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+  <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" (click)="hide()">
+          <button type="button" class="close" data-dismiss="modal" (click)="childModal.hide()">
             <span>&times;</span>
           </button>
           <h4 class="modal-title">{{title}}</h4>
         </div>
-        <div class="modal-body" (click)="hide()">
+        <div class="modal-body" (click)="childModal.hide()">
           <ng-content></ng-content>
         </div>
       </div>
@@ -29,7 +29,7 @@ import { ModalModule, ModalDirective } from 'ngx-bootstrap/modal';
 export class SimpleModalComponent {
   @Input() title: string;
   @Input() elementId: string;
-  @Input() closeOnBodyClick: string;
+  @Input() closeOnBodyClick: boolean;
 
   @ViewChild('childModal') public childModal: ModalDirective;
 
@@ -41,6 +41,9 @@ export class SimpleModalComponent {
   }
 
   hide() {
-    this.childModal.hide();
+    console.log('this.closeOnBodyClick ', this.closeOnBodyClick);
+    if (this.closeOnBodyClick === true) {
+      this.childModal.hide();
+    }
   }
 }
